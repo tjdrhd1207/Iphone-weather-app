@@ -63,12 +63,27 @@ export default function App() {
             )}
           </ScrollView>
         </View>
+
+        <View>
+          <View>
+            <Text>10일 간의 일기예보</Text>
+          </View>
+          <View>
+            <Text>오늘</Text>
+            <Image></Image>
+            <Text>17</Text>
+            <Text>27</Text>
+          </View>
+        </View>
       </ImageBackground>
       <StatusBar style="light" />
     </View>
   );
 }
 
+
+let screenWidth = Dimensions.get('window').width;
+let screenHeight = Dimensions.get('window').height;
 // StyleSheet를 쓰는이유는?
 // 1. 자동완성기능 제공
 // 2. style component를 정리하는데 유용함 ( 각 태그에 style attibute를 긴줄로 정의할 필요가 x )
@@ -80,6 +95,8 @@ const CommonStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    width: screenWidth,
+    height: screenHeight
   },
 });
 
@@ -118,12 +135,9 @@ const firstContainer = StyleSheet.create({
   }
 })
 
-let screenWidth = Dimensions.get('window').width;
-let screenHeight = Dimensions.get('window').height;
-
 const SecondContainer = StyleSheet.create({
   container: {
-    backgroundColor: '#cac1bf',
+    backgroundColor: '#92aaad',
     opacity: 0.7,
     borderRadius: 5,
     marginTop: 50,
