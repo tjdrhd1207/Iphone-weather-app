@@ -3,6 +3,7 @@
 // expo 팀에서 만든 third-party API, Components을 제공하고 있음 (react-native에서 제공하지 않는 다양한 기능)
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground, ScrollView, Image, Dimensions } from 'react-native';
+import { useAxios } from './apiAxios';
 
 const RAINY = require('./assets/rainy-icon.png');
 const CLOUD_WITH_MOON = require('./assets/cloud-with-moon-icon.png');
@@ -24,7 +25,9 @@ const WEATHER_DATA = [
 
 export default function App() {
   const weatherData = WEATHER_DATA[0]?.data || [];
-
+  
+  const { apiData } = useAxios();
+  const weatherData2 = apiData || [];
   return (
     <View style={CommonStyles.container}>
       <ImageBackground source={require('./assets/cloud.jpg')} style={CommonStyles.backgroundImage}>
